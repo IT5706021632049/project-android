@@ -138,13 +138,13 @@ export class appointmentComponent implements OnInit {
                           //console.log(tns.hospitalnumber);
                           if (Responsed.appoint_status == "0") {
                             this.appoint = Responsed ;
-                            this.oneDes = this.appoint.appoint_description ;
-                            this.oneDay = this.appoint.appoint_day ;
-                            this.oneTime = this.appoint.appoint_time ;
-                            this.oneDocName = this.appoint.docter_name ;
-                            this.oneLocation = this.appoint.appoint_location ;
-                            this.oneDeName = this.appoint.department_name ;
-                            this.oneDocId = this.appoint.docter_id ;
+                            this.oneDes = this.appoint.appoint_description ; // ดึงรายละเอียดการนัด
+                            this.oneDay = this.appoint.appoint_day ;    // ดึงวันนัด
+                            this.oneTime = this.appoint.appoint_time ;  // ดึงเวลานัด
+                            this.oneDocName = this.appoint.docter_name ;    // ดึงชื่อหมอที่นัด
+                            this.oneLocation = this.appoint.appoint_location ;  // //ดึงสถานที่นัด
+                            this.oneDeName = this.appoint.department_name ; // ดึงชื่อแผนก
+                            this.oneDocId = this.appoint.docter_id ;    // ดึงรหัสหมอที่นัด
                             console.log(JSON.stringify(this.appoint)) ;
                           }
                         },
