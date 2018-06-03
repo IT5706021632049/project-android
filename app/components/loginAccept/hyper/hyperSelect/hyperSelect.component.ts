@@ -112,13 +112,13 @@ export class hyperSelectComponent implements OnInit {
     
     ngOnInit(): void {
         console.log("connect hyperSelect");
-        this.hyperSelectChart = new hyperSelectChart ;
+        this.hyperSelectChart = new hyperSelectChart ; // เรียกใช้ไฟล์ Chart
         this.hyperSelectChart.name = "" ;
-        securityService.setHyperSelectChart = JSON.stringify(this.hyperSelectChart);
-        console.log(securityService.getHyperSelectChart);
-        this.hyperSelectOne = JSON.parse(securityService.getHyperSelectOne);
-        console.log(securityService.getHyperSelectOne);
-        if (this.hyperSelectOne.nameIndex == "0") {
+        securityService.setHyperSelectChart = JSON.stringify(this.hyperSelectChart); //ส่งค่าไปที่ Chart
+        console.log(securityService.getHyperSelectChart); // แสดง Log
+        this.hyperSelectOne = JSON.parse(securityService.getHyperSelectOne); //ดึงข้อมูลสุขภาพทั่วไป
+        console.log(securityService.getHyperSelectOne);  // แสดง Log
+        if (this.hyperSelectOne.nameIndex == "0") { 
             this.checkHyper1 = true ;
         }
         else if (this.hyperSelectOne.nameIndex == "1") {
