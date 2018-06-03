@@ -94,23 +94,23 @@ export class costComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.costSelect = new costSelect ;
-        this.costSelect.name = "" ;
-        this.costSelect.numberDate = "" ;
-        this.costSelect.date2 = "" ;
-        securityService.setCostSelect = JSON.stringify(this.costSelect) ;
+        this.costSelect = new costSelect ;  // เรียกไฟล์
+        this.costSelect.name = "" ; //กำหนดตัวแปร
+        this.costSelect.numberDate = "" ; //กำหนดตัวแปร
+        this.costSelect.date2 = "" ; //กำหนดตัวแปร
+        securityService.setCostSelect = JSON.stringify(this.costSelect) ;  // เรียกไฟล์
         console.log(securityService.getCostSelect);
-        this.dataUser = JSON.parse(securityService.getDataUser);
-        this.hospitalnumber = this.dataUser.dataset.hn
+        this.dataUser = JSON.parse(securityService.getDataUser);    // เก็บลงค่าลงแปรของผู้ป่วย
+        this.hospitalnumber = this.dataUser.dataset.hn  // เก็บหมายเลข HN
 
-        this.costService.getDataFinance(this.hospitalnumber)
+        this.costService.getDataFinance(this.hospitalnumber)    //เช็คการเชื่อมต่อกับ API
                     .subscribe(
                         (Response) => {
                           // console.log(JSON.stringify(Response));
-                          this.dataCost = Response.dataset ;
+                          this.dataCost = Response.dataset ;    // ดึงข้อมูลค่าใช้จ่าย
                           console.log(this.dataCost) ;
                         },
-                        (error) => {
+                        (error) => {    // แสดงการเชื่อมต่อกับระบบไม่ได้
                             console.log("data error") ;
                             alert("กรุณาลองอีกครั้ง");
                             this.router.navigate(["/loginProfile"]);
