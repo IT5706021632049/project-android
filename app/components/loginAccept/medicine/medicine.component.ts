@@ -87,14 +87,14 @@ export class medicineComponent implements OnInit {
         this.diseases = new diseases ;
         this.diseases.name = "" ;
         // this.diseases = JSON.parse(securityService.getDiseases);
-        this.dataUser = JSON.parse(securityService.getDataUser) ;
-        this.hospitalnumber = this.dataUser.dataset.hn
-        console.log(this.hospitalnumber) ;
-        this.medicineService.getDataDayMedicine(this.hospitalnumber)
+        this.dataUser = JSON.parse(securityService.getDataUser) ;   // เก็บลงค่าตัวแปรของผู้ป่วย
+        this.hospitalnumber = this.dataUser.dataset.hn       // เก็บหมายเลข HN
+        console.log(this.hospitalnumber) ;  // แสดง Log หมายเลข HN
+        this.medicineService.getDataDayMedicine(this.hospitalnumber) // เช็คการเชื่อมต่อกับ API
                     .subscribe(
                         (Response) => {
                           // console.log(JSON.stringify(Response));
-                          this.dataMidicine = Response.dataset ;
+                          this.dataMidicine = Response.dataset ;    // ดึข้อมูลยาและวิธีการใช้
                           this.dataMidicine.forEach ((element, index) => {
                             if (element.drug_pay != "0") {
                                 this.dataMedicineShow.push(element);
@@ -102,7 +102,7 @@ export class medicineComponent implements OnInit {
                         })
                           // console.log(this.dataMedicineShow) ;
                         },
-                        (error) => {
+                        (error) => {        //  แสดงการเชื่อมต่อกับระบบไม่ได้
                             console.log("data error") ;
                             alert("กรุณาลองอีกครั้ง");
                             this.router.navigate(["/loginProfile"]);
