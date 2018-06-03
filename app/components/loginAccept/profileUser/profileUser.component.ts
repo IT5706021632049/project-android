@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, AfterViewInit, ChangeDetectorRef } from "@angular/core";
-import { Page } from "tns-core-modules/ui/page"; //eeeeee
+import { Page } from "tns-core-modules/ui/page"; 
 import { Router, ActivatedRoute, UrlSegment } from "@angular/router";
 import { ModalDialogParams } from "nativescript-angular/directives/dialogs";
 import { ViewContainerRef } from "@angular/core";
@@ -91,14 +91,14 @@ export class profileUserComponent implements OnInit {
     ngOnInit(): void {
         
         // if (securityService.getDataUser == "") {this.router.navigate(["/security/standbytologin"]);}
-        this.dataUser = JSON.parse(securityService.getDataUser);
+        this.dataUser = JSON.parse(securityService.getDataUser); //เก็บค่าลงตัวแปรผู้ป่วยที่ใช้งาน
         console.log(JSON.stringify(this.dataUser.dataset));
         console.log(this.dataUser.dataset.hn)
-        this.nameAndsurname = this.dataUser.dataset.fname + " " + this.dataUser.dataset.lname
-        this.hospitalnumber = this.dataUser.dataset.hn
-        this.cid = this.dataUser.dataset.cid
-        this.gender = "เพศ " + this.dataUser.dataset.gender
-        this.dob = "วันเกิด " + this.dataUser.dataset.dob
+        this.nameAndsurname = this.dataUser.dataset.fname + " " + this.dataUser.dataset.lname //ดึงค่าชื่อและนามสกุล
+        this.hospitalnumber = this.dataUser.dataset.hn  //เก็บหมายเลข HN
+        this.cid = this.dataUser.dataset.cid    //เก็บหมายเลขบัตรประชาชน
+        this.gender = "เพศ " + this.dataUser.dataset.gender //เก็บเพศ
+        this.dob = "วันเกิด " + this.dataUser.dataset.dob   //เก็บวันเกิด
         // this.barcode = "https://barcode.tec-it.com/barcode.ashx?translate-esc=off&data=" + this.hospitalnumber + "&code=Code39&multiplebarcodes=false&unit=Fit&dpi=96&imagetype=Gif&rotation=0&color=%23000000&bgcolor=%23ffffff&qunit=Mm&quiet=0" ;
  
         // if (this.dataUser.dataset.blood == null) {
