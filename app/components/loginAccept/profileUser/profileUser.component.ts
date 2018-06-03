@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, AfterViewInit, ChangeDetectorRef } from "@angular/core";
-import { Page } from "tns-core-modules/ui/page";
+import { Page } from "tns-core-modules/ui/page"; //eeeeee
 import { Router, ActivatedRoute, UrlSegment } from "@angular/router";
 import { ModalDialogParams } from "nativescript-angular/directives/dialogs";
 import { ViewContainerRef } from "@angular/core";
