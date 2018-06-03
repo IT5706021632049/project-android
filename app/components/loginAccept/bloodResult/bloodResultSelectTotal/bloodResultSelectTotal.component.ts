@@ -147,19 +147,19 @@ export class bloodResultSelectTotalComponent implements OnInit {
         this.selectBlood = new selectBlood ;
         this.selectBlood.numberIndex = "" ;
         this.selectBlood.name = "" ;
-        securityService.setSelectBlood = JSON.stringify(this.selectBlood);
+        securityService.setSelectBlood = JSON.stringify(this.selectBlood); 
         console.log(securityService.getSelectBlood);
-        this.selectBlood = JSON.parse(securityService.getSelectBlood);
-        this.dataUser = JSON.parse(securityService.getDataUser) ;
-        this.hospitalnumber = this.dataUser.dataset.hn ;
-        this.gender = this.dataUser.dataset.gender ;
-        console.log(this.hospitalnumber) ;
-        this.dayVisit = JSON.parse(securityService.getDayVisit) ;
+        this.selectBlood = JSON.parse(securityService.getSelectBlood); // ดึงข้อมูลผลแลป
+        this.dataUser = JSON.parse(securityService.getDataUser) ;   // เก็บค่าลงตัวแปรของผู้ป่วย
+        this.hospitalnumber = this.dataUser.dataset.hn ;    //  เก็บหมายเลข HN
+        this.gender = this.dataUser.dataset.gender ;   // เก็บเพศของผู้ป่วย
+        console.log(this.hospitalnumber) ;  // แสดง Log
+        this.dayVisit = JSON.parse(securityService.getDayVisit) ;   // 
         console.log(this.dayVisit) ;
         this.info = new info ;
         this.info.name = "" ;
         this.info.numberIndex = "" ;
-        securityService.setInfo = JSON.stringify(this.info) ;
+        securityService.setInfo = JSON.stringify(this.info) ;   // ส่งค่าไปที่ไฟล์ Info
 
         this.bloodResultService.getDataLab(this.hospitalnumber)
                     .subscribe(
